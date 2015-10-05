@@ -33,7 +33,11 @@ public class Main extends Activity {
         lvItems.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long l) {
-                Main.this.onRemove( pos );
+                if ( pos >= 0 ) {
+                    Main.this.items.remove( pos );
+                    Main.this.itemsAdapter.notifyDataSetChanged();
+                    Main.this.updateStatus();
+                }
                 return false;
             }
         });
@@ -69,15 +73,6 @@ public class Main extends Activity {
     private void updateStatus() {
         TextView txtNum = (TextView) this.findViewById( R.id.lblNum );
         txtNum.setText( Integer.toString( this.itemsAdapter.getCount() ) );
-    }
-
-    private void onRemove(int pos) {
-        if ( pos >= 0 ) {
-            this.itemsAdapter.remove( this.items.remove( pos ) );
-            this.updateStatus();
-        }
-
-        return;
     }
 
     private ArrayAdapter<String> itemsAdapter;
