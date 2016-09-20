@@ -1,6 +1,6 @@
 package com.devbaltasarq.listacompra;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.*;
 import java.util.ArrayList;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     /**
      * Called when the activity is first created.
      */
