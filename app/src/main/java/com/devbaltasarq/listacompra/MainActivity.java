@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onAdd() {
-        final EditText edText = new EditText( this.getApplicationContext() );
+        final EditText edText = new EditText( this );
 
         AlertDialog.Builder builder = new AlertDialog.Builder( this );
         builder.setTitle("A comprar...");
